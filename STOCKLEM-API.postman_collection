@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "1b3a6199-7211-483d-9c08-185e54f39e9b",
+		"name": "STOCKLEM-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47999771",
+		"_collection_link": "https://arbelaezcorteskaroldayana-5132861.postman.co/workspace/stocklem_api~e9893f6e-998c-4fef-9ed2-ebe656aa12f2/collection/47999771-1b3a6199-7211-483d-9c08-185e54f39e9b?action=share&source=collection_link&creator=47999771"
+	},
+	"item": [
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|iwRhROpCGFkAaUt2UJHBn8rzCQSL1tSFr0vhq6r3ef61c466",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}article",
+							"host": [
+								"{{URL_BASE}}article"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}article/1",
+							"host": [
+								"{{URL_BASE}}article"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 2,\r\n        \"name\": \"Alimento para cerdos\",\r\n        \"quantity\": 300,\r\n        \"min_quantity\": 1,\r\n        \"photo\": null,\r\n        \"technical_sheet\": null,\r\n        \"presentation_id\": 1,\r\n        \"category_id\": 1,\r\n        \"supplier_id\": 1,\r\n        \"unit_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}article/2",
+							"host": [
+								"{{URL_BASE}}article"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|iwRhROpCGFkAaUt2UJHBn8rzCQSL1tSFr0vhq6r3ef61c466",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}category",
+							"host": [
+								"{{URL_BASE}}category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|iwRhROpCGFkAaUt2UJHBn8rzCQSL1tSFr0vhq6r3ef61c466",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Alimentos\",\r\n    \"description\": \"Alimentos para el ganado y cerdos\",\r\n    \"created_at\": null,\r\n    \"updated_at\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}category",
+							"host": [
+								"{{URL_BASE}}category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}auth/login",
+							"host": [
+								"{{URL_BASE}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}auth/logout",
+							"host": [
+								"{{URL_BASE}}auth"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
