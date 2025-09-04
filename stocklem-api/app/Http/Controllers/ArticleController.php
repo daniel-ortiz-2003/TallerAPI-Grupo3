@@ -12,7 +12,7 @@ class ArticleController extends Controller
         'name' => 'required|string|min:3|max:100',
         'quantity' => 'required|numeric|min:1|max:9999999999',
         'photo' => 'max:255',
-        'technical_sheet' => 'mimes:pdf|max:5120',
+        // 'technical_sheet' => 'mimes:pdf|max:5120',
         'presentation_id' => 'max:9999999999999999999',
         'category_id' => 'max:9999999999999999999',
         'supplier_id' => 'max:9999999999999999999'
@@ -26,7 +26,8 @@ class ArticleController extends Controller
         'technical_sheet' => 'ficha técnica',
         'presentation_id' => 'presentación',
         'category_id' => 'categoría',
-        'supplier_id' => 'proveedor'
+        'supplier_id' => 'proveedor',
+        'unit_id' => 'unidad'
 
     ];
 
@@ -36,7 +37,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        $articles->load(['presentation', 'category', 'supplier', 'unit']);
+        $articles->load(['presentation', 'category', 'supplier','unit']);
         return response()->json($articles, Response::HTTP_OK);
     }
 
