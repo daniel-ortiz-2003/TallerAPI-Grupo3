@@ -8,6 +8,7 @@ use App\Http\Controllers\IssueController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\PresentationController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,4 +33,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('person', PersonController::class);
     Route::apiResource('presentation', PresentationController::class);
     Route::apiResource('supplier', SupplierController::class);
+    Route::apiResource('unit', UnitController::class);
 });
